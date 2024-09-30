@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Entrevista Semiestructurada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        textarea {
+            width: 100%;
+            height: 80px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Consentimiento Informado</h2>
+    <h3>Título del Estudio</h3>
+    <p><strong>"Salud para todos: La nueva reforma de salud en Colombia desde la Administración Pública"</strong></p>
+    <p><strong>Investigador Principal:</strong> Melba Gensy Salguero Prieto</p>
+    <p><strong>Universidad:</strong> Universidad Europea Madrid</p>
+    
+    <h3>Propósito del Estudio</h3>
+    <p>Este estudio tiene como objetivo analizar las percepciones y experiencias de diferentes actores involucrados en la implementación de la nueva reforma de salud en Colombia. La información recolectada ayudará a comprender mejor los impactos y desafíos de la reforma.</p>
+    
+    <h3>Procedimiento</h3>
+    <p>Como participante en este estudio, se le pedirá que participe en una entrevista semiestructurada que durará aproximadamente 60 minutos. Las entrevistas serán grabadas y transcritas para su posterior análisis. También se le puede solicitar que complete un cuestionario estructurado.</p>
+    
+    <h3>Riesgos y Beneficios</h3>
+    <p>No se anticipan riesgos significativos asociados con su participación en este estudio. Los beneficios incluyen contribuir a una mejor comprensión y posible mejora del sistema de salud en Colombia.</p>
+    
+    <h3>Confidencialidad</h3>
+    <p>La información proporcionada será tratada con la más estricta confidencialidad. Los datos serán anonimizados y utilizados únicamente con fines académicos. Solo el equipo de investigación tendrá acceso a las grabaciones y transcripciones.</p>
+    
+    <h3>Voluntariedad</h3>
+    <p>Su participación en este estudio es completamente voluntaria. Puede retirarse en cualquier momento sin ninguna penalización.</p>
+    
+    <h3>Contacto</h3>
+    <p>Si tiene alguna pregunta sobre este estudio, puede contactarse con el investigador principal, Melba Gensy Salguero Prieto, a través del correo electrónico universitario.</p>
+    
+    <label for="consentimiento">¿He leído y comprendido la información proporcionada anteriormente y doy mi consentimiento para participar en este estudio? También autorizo la grabación de la entrevista para fines de análisis.</label><br>
+    <input type="radio" id="consentimiento_si" name="consentimiento" value="sí" required>
+    <label for="consentimiento_si">Sí</label><br>
+    <input type="radio" id="consentimiento_no" name="consentimiento" value="no">
+    <label for="consentimiento_no">No</label><br><br>
+
+    <label for="firma_participante">Firma del Participante:</label>
+    <input type="text" id="firma_participante" name="firma_participante" required>
+    <br><br>
+
+    <label for="nombre_participante">Nombre del Participante:</label>
+    <input type="text" id="nombre_participante" name="nombre_participante" required>
+    <br><br>
+
+    <label for="fecha_participante">Fecha:</label>
+    <input type="date" id="fecha_participante" name="fecha_participante" required>
+    <br><br>
+
+    <h3>Acuerdo de Privacidad</h3>
+    <h4>Confidencialidad y Privacidad:</h4>
+    <p><strong>Protección de Datos Personales:</strong> Todos los datos personales recopilados durante este estudio serán tratados de acuerdo con las leyes de protección de datos aplicables y la política de privacidad de la Universidad Europea Madrid.</p>
+    <p><strong>Datos Anónimos:</strong> Para garantizar la privacidad de los participantes, todos los datos recopilados serán anonimizados. No se revelará información que pueda identificar a los participantes en los informes o publicaciones resultantes del estudio.</p>
+    <p><strong>Acceso a Datos:</strong> Solo el equipo de investigación tendrá acceso a los datos recopilados. Las grabaciones de las entrevistas serán almacenadas de forma segura y se destruirán una vez finalizado el análisis de los datos.</p>
+    <p><strong>Uso de Datos:</strong> Los datos recopilados serán utilizados únicamente para los fines del estudio descrito en este consentimiento informado. No se utilizarán para ningún otro propósito sin el consentimiento previo del participante.</p>
+
+    <label for="firma_privacidad">Firma del Participante:</label>
+    <input type="text" id="firma_privacidad" name="firma_privacidad" required>
+    <br><br>
+
+    <label for="nombre_privacidad">Nombre del Participante:</label>
+    <input type="text" id="nombre_privacidad" name="nombre_privacidad" required>
+    <br><br>
+
+    <label for="fecha_privacidad">Fecha:</label>
+    <input type="date" id="fecha_privacidad" name="fecha_privacidad" required>
+    <br><br>
+
+    <h2>Formulario de Entrevista Semiestructurada</h2>
+
+    <form action="/guardar_respuestas" method="POST">
+        <!-- Preguntas Introductorias -->
+        <h3>Preguntas Introductorias</h3>
+        <label for="nombre">Nombre del participante:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
+
+        <label for="posicion">Descripción de su posición actual y relación con el sector salud:</label>
+        <textarea id="posicion" name="posicion" required></textarea>
+        <br><br>
+
+        <label for="tiempo_sector">¿Cuánto tiempo lleva trabajando en el sector salud?</label>
+        <input type="number" id="tiempo_sector" name="tiempo_sector" required min="0">
+        <br><br>
+
+        <!-- Preguntas Centrales -->
+        <h3>Preguntas Centrales</h3>
+        <label for="conocimiento_reforma">¿Cuál es su conocimiento sobre la nueva reforma de salud en Colombia?</label>
+        <textarea id="conocimiento_reforma" name="conocimiento_reforma" required></textarea>
+        <br><br>
+
+        <label for="experiencia_reforma">¿Cómo describiría su experiencia con la implementación de esta reforma?</label>
+        <textarea id="experiencia_reforma" name="experiencia_reforma" required></textarea>
+        <br><br>
+
+        <label for="cambios_observados">¿Qué cambios significativos ha observado en el sistema de salud desde la implementación de la reforma?</label>
+        <textarea id="cambios_observados" name="cambios_observados" required></textarea>
+        <br><br>
+
+        <label for="impacto_pacientes">¿Cómo ha afectado la reforma a los pacientes y a los profesionales de la salud?</label>
+        <textarea id="impacto_pacientes" name="impacto_pacientes" required></textarea>
+        <br><br>
+
+        <label for="desafios">¿Cuáles han sido los principales desafíos en la implementación de la reforma?</label>
+        <textarea id="desafios" name="desafios" required></textarea>
+        <br><br>
+
+        <label for="oportunidades">¿Qué oportunidades ha identificado que podrían mejorar la efectividad de la reforma?</label>
+        <textarea id="oportunidades" name="oportunidades" required></textarea>
+        <br><br>
+
+        <label for="exito_reforma">¿Hasta qué punto ha sido exitosa la reforma en mejorar el acceso y la calidad de los servicios de salud?</label>
+        <textarea id="exito_reforma" name="exito_reforma" required></textarea>
+        <br><br>
+
+        <label for="indicadores_exito">¿Qué indicadores utilizaría para medir el éxito de la reforma?</label>
+        <textarea id="indicadores_exito" name="indicadores_exito" required></textarea>
+        <br><br>
+
+        <!-- Preguntas de Profundización -->
+        <h3>Preguntas de Profundización</h3>
+        <label for="ejemplo_impacto">¿Puede compartir algún ejemplo específico de cómo la reforma ha impactado su trabajo diario?</label>
+        <textarea id="ejemplo_impacto" name="ejemplo_impacto"></textarea>
+        <br><br>
+
+        <label for="sugerencias">¿Qué sugerencias tiene para mejorar la reforma o su implementación?</label>
+        <textarea id="sugerencias" name="sugerencias"></textarea>
+        <br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+
